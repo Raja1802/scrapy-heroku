@@ -1,5 +1,5 @@
 import psycopg2
-import cPickle
+import _pickle as cPickle
 import json
 import urlparse
 from zope.interface import implements
