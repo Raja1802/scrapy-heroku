@@ -1,6 +1,6 @@
 from scrapyd.utils import get_project_list
 
-from spiderqueue import Psycopg2SpiderQueue
+from .spiderqueue import Psycopg2SpiderQueue
 
 
 def get_spider_queues(config):
