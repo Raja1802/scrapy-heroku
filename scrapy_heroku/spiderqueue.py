@@ -1,7 +1,7 @@
 import psycopg2
 import _pickle as cPickle
 import json
-import urlparse
+from urllib.parse import urlparse
 from zope.interface import implements
 
 from scrapyd.interfaces import ISpiderQueue
