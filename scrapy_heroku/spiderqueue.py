@@ -2,7 +2,7 @@ import psycopg2
 import _pickle as cPickle
 import json
 from urllib.parse import urlparse
-from zope.interface import implements
+from zope.interface import implementer
 
 from scrapyd.interfaces import ISpiderQueue
 
@@ -120,9 +120,8 @@ class JsonPsycopg2PriorityQueue(Psycopg2PriorityQueue):
     def decode(self, text):
         return json.loads(text)
 
-
+@implementer(ISpiderQueue)
 class Psycopg2SpiderQueue(object):
-    implements(ISpiderQueue)
 
     def __init__(self, config, table='spider_queue'):
         self.q = JsonPsycopg2PriorityQueue(config, table)
