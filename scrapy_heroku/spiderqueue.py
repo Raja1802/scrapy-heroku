@@ -9,7 +9,7 @@ from scrapyd.interfaces import ISpiderQueue
 
 class Psycopg2PriorityQueue(object):
     def __init__(self, config, table='scrapy_queue'):
-        url = urlparse.urlparse(config.get('database_url'))
+        url = urlparse(config.get('database_url'))
         # Remove query strings.
         path = url.path[1:]
         path = path.split('?', 2)[0]
